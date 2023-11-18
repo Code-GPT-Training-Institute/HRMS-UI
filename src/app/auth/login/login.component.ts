@@ -7,4 +7,14 @@ import { Component } from '@angular/core';
 })
 export class LoginComponent {
 
+  public username: string = '';
+  public password: string = '';
+
+  public showUserName() {    
+    if(this.username !== undefined && this.username !== "" && this.password !== undefined && this.password !== "" ){
+      alert(`This is your username:  ${this.username}`)
+    } else {
+      alert("Please give the username and password")
+    }    
+  }
 }

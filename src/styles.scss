@@ -1,3 +1,17 @@
+$primary: #005eff;
+$danger: #ff4136;
+$body-bg: #fafafa;
+$body-color: #333;
+$border-radius: 0rem;
+$border-width: 1px;
+$enable-shadows: false;
+$btn-border-radius: 0px;
+$prefix: "mo-";
+$theme-colors: (
+  "primary": $primary,
+  "danger": $danger
+);
+@import "../node_modules/bootstrap/scss/bootstrap";
 :host{
     font-family: 'Raleway', sans-serif;
 }
