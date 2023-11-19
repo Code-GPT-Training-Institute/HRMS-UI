@@ -1,0 +1,9 @@
+.loginPage{
+    height: 100vh;        
+}
+@media (max-height: 550px) {
+    .loginPage{
+        height: auto;        
+        min-height: 500px;
+    }
+}
