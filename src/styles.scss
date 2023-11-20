@@ -1,0 +1,46 @@
+$primary: #005eff;
+$danger: #ff4136;
+$body-bg: #fafafa;
+$body-color: #333;
+$border-radius: 0;
+$input-border-radius:  $border-radius;
+$input-border-radius-sm: $border-radius;
+$input-border-radius-lg: $border-radius;
+$input-box-shadow: null;
+$border-width: 1px;
+$enable-shadows: false;
+$btn-border-radius: 0px;
+$btn-border-radius-sm: 0px;
+$btn-border-radius-lg: 0px;
+
+// $prefix: "codegpt-";
+$theme-colors: (
+  "primary": $primary,
+  "danger": $danger
+);
+@import "../node_modules/bootstrap/scss/bootstrap";
+@import "../node_modules/bootstrap-icons/font/bootstrap-icons.scss";
+
+:host{
+    font-family: 'Raleway', sans-serif;
+}
+// :root{
+    
+// }
+
+.myformInputs{
+    .form-control{
+        &:focus{
+            box-shadow: unset;
+        }
+    }
+    .input-group{
+        border: 1px solid $border-color;
+        .input-group-text, .form-control{
+            border: 0px;
+        }
+        &:focus-within{
+            border-color: $primary;
+        }
+    }
+}
