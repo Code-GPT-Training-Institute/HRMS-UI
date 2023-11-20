@@ -10,6 +10,9 @@ $input-box-shadow: null;
 $border-width: 1px;
 $enable-shadows: false;
 $btn-border-radius: 0px;
+$btn-border-radius-sm: 0px;
+$btn-border-radius-lg: 0px;
+
 // $prefix: "codegpt-";
 $theme-colors: (
   "primary": $primary,
@@ -21,6 +24,9 @@ $theme-colors: (
 :host{
     font-family: 'Raleway', sans-serif;
 }
+// :root{
+    
+// }
 
 .myformInputs{
     .form-control{
