@@ -34,13 +34,13 @@ $theme-colors: (
             box-shadow: unset;
         }
     }
-    .input-group{
-        border: 1px solid $border-color;
-        .input-group-text, .form-control{
-            border: 0px;
-        }
-        &:focus-within{
-            border-color: $primary;
-        }
-    }
+    // .input-group{
+    //     border: 1px solid $border-color;
+    //     .input-group-text, .form-control{
+    //         border: 0px;
+    //     }
+    //     &:focus-within{
+    //         border-color: $primary;
+    //     }
+    // }
 }
