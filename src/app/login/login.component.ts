@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder, AbstractControl } from '@angular/forms';
+import { LoginService } from '../services/login.service';
 
 @Component({
   selector: 'app-login',
@@ -9,14 +10,15 @@ import { FormGroup, FormControl, Validators, FormBuilder, AbstractControl } from
 export class LoginComponent {
   //  public username: string = '';
   //  public password: string = '';
-  public enableLoginButton: Boolean = true;
+  public enableLoginButton: Boolean = false;
+  
   loginUserForm : FormGroup = new FormGroup({
     userName: new FormControl(''),
     password: new FormControl('')
   });
   submitted = false;
   
-  constructor(private formBuilder: FormBuilder){}
+  constructor(private formBuilder: FormBuilder, private loginService: LoginService){}
 
   ngOnInit(): void{
     this.loginUserForm = this.formBuilder.group({
@@ -54,14 +56,11 @@ export class LoginComponent {
     console.log(JSON.stringify(this.loginUserForm.value, null, 2));
   }
 
-  // get loginpassword(){
-  // return this.loginUser.get('password')
-  // }
-//public showUserName() {    
-    // if(this.loginUser. !== undefined && this.username !== "" && this.password !== undefined && this.password !== "" ){
-    //   alert(`This is your username:  ${this.username}`)
-    // } else {
-    //   alert("Please give the username and password")
-    // }    
-//}
+  public validateUserName() {
+    this.loginService.validateUserName(this.loginUserForm.value.userName).subscribe(isValidUserName => {
+      this.enableLoginButton = isValidUserName;
+    })
+  }
+
+
 }

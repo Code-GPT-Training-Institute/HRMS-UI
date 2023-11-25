@@ -13,7 +13,7 @@
                                 <span class="input-group-text" id="basic-addon1">
                                     <i class="bi bi-person"></i>
                                 </span>
-                                <input type="email" class="form-control" placeholder="Enter Username" formControlName="userName" [ngClass]="{ 'is-invalid': submitted && f['userName'].errors }">
+                                <input type="email" class="form-control" placeholder="Enter Username" formControlName="userName" [ngClass]="{ 'is-invalid': submitted && f['userName'].errors }" (change)="validateUserName()">
                                 <div *ngIf="submitted && f['userName'].errors" class="invalid-feedback">
                                     <div *ngIf="f['userName'].errors['required']">
                                         <small class="text-danger">Username is required</small>
@@ -63,7 +63,7 @@
                         </form>
 
                         <div class="mt-3 text-center">
-                            Yet should not account, click to <a [routerLink]="['/register']">Sign up</a>
+                            Yet should not account, click to <button class="btn btn-link p-0" [routerLink]="['/register']" [disabled]="enableLoginButton">Sign up</button>
                         </div>
                     </div>
                 </div>
