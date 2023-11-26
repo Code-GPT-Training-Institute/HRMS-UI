@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder, AbstractControl } from '@angular/forms';
-import { LoginService } from '../services/login.service';
+import { LoginService } from 'src/app/services/login.service';
+import { Route, Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-login',
@@ -18,7 +20,7 @@ export class LoginComponent {
   });
   submitted = false;
   
-  constructor(private formBuilder: FormBuilder, private loginService: LoginService){}
+  constructor(private formBuilder: FormBuilder, private loginService: LoginService, private Router: Router){}
 
   ngOnInit(): void{
     this.loginUserForm = this.formBuilder.group({
@@ -32,8 +34,8 @@ export class LoginComponent {
       password: [
         '', [
           Validators.required,
-          //Validators.pattern("^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$@!%&*?])[A-Za-z\d#$@!%&*?]{6,12}$"),
-          Validators.pattern('^(?=.*[#$@!%&*?])[A-Za-z\d#$@!%&*?]{6,12}$'),
+          //Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$@!%&*?])[A-Za-z\d#$@!%&*?]{6,12}$'),
+          //Validators.pattern('^(?=.*[#$@!%&*?])[A-Za-z\d#$@!%&*?]{6,12}$'),
           Validators.minLength(6),
           Validators.maxLength(12),          
         ],
@@ -42,11 +44,12 @@ export class LoginComponent {
   }
 
   
-  get f(){
+  get formGetControls(){
     return this.loginUserForm.controls;
   }
   
   loginSubmit(){
+    debugger;
     this.submitted = true;    
 
     if (this.loginUserForm.invalid) {
@@ -54,6 +57,7 @@ export class LoginComponent {
     }
 
     console.log(JSON.stringify(this.loginUserForm.value, null, 2));
+    this.Router.navigate(['/home']);
   }
 
   public validateUserName() {

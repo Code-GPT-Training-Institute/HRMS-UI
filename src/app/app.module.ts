@@ -5,24 +5,26 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './auth/login/login.component';
 import { HomeComponent } from './home/home.component';
-import { RegisterComponent } from './register/register.component';
+import { RegisterComponent } from './auth/register/register.component';
+import { NavBarComponent } from './common/nav-bar/nav-bar.component';
+import { FooterComponent } from './common/footer/footer.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    LoginComponent,
-    HomeComponent,
-    RegisterComponent
+    AppComponent,    
+  //  HomeComponent,    
+    NavBarComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
+    //FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    //ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
