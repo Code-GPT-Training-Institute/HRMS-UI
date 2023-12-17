@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder, AbstractControl } from '@angular/forms';
 import { LoginService } from 'src/app/services/login.service';
-import { Route, Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -13,6 +13,9 @@ export class LoginComponent {
   //  public username: string = '';
   //  public password: string = '';
   public enableLoginButton: Boolean = false;
+  public currentUser: [] | undefined;
+  private currentUserDetails: object | undefined;
+  
   
   loginUserForm : FormGroup = new FormGroup({
     userName: new FormControl(''),
@@ -20,7 +23,7 @@ export class LoginComponent {
   });
   submitted = false;
   
-  constructor(private formBuilder: FormBuilder, private loginService: LoginService, private Router: Router){}
+  constructor(private formBuilder: FormBuilder, public loginService: LoginService, private Router: Router){}
 
   ngOnInit(): void{
     this.loginUserForm = this.formBuilder.group({
@@ -55,8 +58,14 @@ export class LoginComponent {
     if (this.loginUserForm.invalid) {
       return;
     }
-
-    console.log(JSON.stringify(this.loginUserForm.value, null, 2));
+    this.currentUserDetails = {
+      usrName : this.loginUserForm.value.userName,
+      userRole : "admin",
+      token: "abcdefghijk"
+    }
+    
+    localStorage.setItem('userDetails', JSON.stringify(this.currentUserDetails))
+   // console.log(JSON.stringify(this.loginUserForm.value, null, 2));
     this.Router.navigate(['/home']);
   }
 
