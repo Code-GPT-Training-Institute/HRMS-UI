@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 import { HomeRoutingModule } from './home-routing.module';
 import { SearchComponent } from './search/search.component';
@@ -11,7 +12,7 @@ import { NavBarComponent } from '../common/nav-bar/nav-bar.component';
 import { ManageUserComponent } from './manage-user/manage-user.component';
 import { FooterModule } from '../common/footer/footer.module';
 import { PersonalDetailsComponent } from './personal-details/personal-details.component';
-import { FormsModule } from '@angular/forms';
+
 import { CreateUserComponent } from './manage-user/create-user/create-user.component';
 
 
@@ -33,6 +34,6 @@ import { CreateUserComponent } from './manage-user/create-user/create-user.compo
     FormsModule
   ],
   providers: [LoginService],
- // exports: [PersonalDetailsComponent]
+  exports: [CreateUserComponent]
 })
 export class HomeModule { }
