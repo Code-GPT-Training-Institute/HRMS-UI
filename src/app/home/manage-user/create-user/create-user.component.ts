@@ -5,24 +5,28 @@ import { Component } from '@angular/core';
   templateUrl: './create-user.component.html',
   styleUrls: ['./create-user.component.scss']
 })
+export class CreateUserComponent {  
+  public currentUser: User;
+  existingUserStatus: any = localStorage.getItem('hrms_userInfo');
+  existingUser: User[] = this.existingUserStatus === null? [] : JSON.parse(localStorage.getItem('hrms_userInfo'));
+  constructor(){
+  }
 
+  ngOnInit(){
+    this.currentUser = new User();       
+  }
+  
+  public userSubmit(){    
+  //  debugger;  
+  // console.log(this.currentUser)
+   this.existingUser.push(this.currentUser);   
+    localStorage.setItem('hrms_userInfo', JSON.stringify(this.existingUser))     
+  }
+}
 export class User {
   public userName: string;
-  public age: number;
+  public password: string;
   public role: string;
-  public address: string;
-  public DOJ: Date; 
+  public createdDate: Date;
+  public createdBy: string; 
 }
-
-export class CreateUserComponent {  
-  public userDetails: User;
-  
-   ngOnInit(){   
-    this.userDetails = new User();
-   }
-  
-   public userSubmit(){
-     console.log(this.userDetails.userName);
-   }
-}
-

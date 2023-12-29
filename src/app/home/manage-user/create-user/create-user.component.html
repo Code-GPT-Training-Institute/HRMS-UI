@@ -9,26 +9,26 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-lg-4">
-                            <form (click)="userSubmit()">
+                            <form (submit)="userSubmit()">
                                 <div class="mb-3">
                                     <label class="form-label" for="">User Name</label>
-                                    <input type="text" class="form-control" name="userName" [(ngModel)]="userDetails.userName" required/>
+                                    <input type="text" class="form-control" name="userName" [(ngModel)]="currentUser.userName" required/>
                                 </div>
                                 <div class="mb-3">
-                                    <label class="form-label" for="">Age</label>
-                                    <input type="text" class="form-control" name="age" [(ngModel)]="userDetails.age" required/>
+                                    <label class="form-label" for="">Password</label>
+                                    <input type="password" class="form-control" name="password" [(ngModel)]="currentUser.password" required/>
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label" for="">Role</label>
-                                    <input type="text" class="form-control" name="role" [(ngModel)]="userDetails.role" required/>
+                                    <input type="text" class="form-control" name="role" [(ngModel)]="currentUser.role" required/>
                                 </div>
                                 <div class="mb-3">
-                                    <label class="form-label" for="">Address</label>
-                                    <input type="text" class="form-control" name="address" [(ngModel)]="userDetails.address" required/>
+                                    <label class="form-label" for="">Created Date</label>
+                                    <input type="date" class="form-control" name="createdDate" [(ngModel)]="currentUser.createdDate" required/>
                                 </div>
                                 <div class="mb-3">
-                                    <label class="form-label" for="">Date of Joining</label>
-                                    <input type="text" class="form-control" name="DOJ" [(ngModel)]="userDetails.DOJ" required/>
+                                    <label class="form-label" for="">Created By</label>
+                                    <input type="text" class="form-control" name="createdBy" [(ngModel)]="currentUser.createdBy" required/>
                                 </div>
         
                                 <button class="btn btn-primary">Submit</button>

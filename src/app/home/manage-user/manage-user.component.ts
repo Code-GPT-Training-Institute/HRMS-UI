@@ -5,12 +5,43 @@ import { Component } from '@angular/core';
   templateUrl: './manage-user.component.html',
   styleUrls: ['./manage-user.component.scss']
 })
-export class ManageUserComponent {
+export class ManageUserComponent { 
     public userData: any;
+    tableUserHeader = [
+      {
+        name: 'S.no',
+        class: 'text-start',
+        event: this.idHeaderClick,
+      },
+      {
+        name: 'User Name',
+        class: 'text-start',
+        event: this.idHeaderClick,
+      },
+      {
+        name: 'Role',
+        class: 'text-start',
+        event: this.idHeaderClick,
+      },
+      {
+        name: 'Created Date',
+        class: 'text-start',
+        event: this.idHeaderClick,
+      },
+      {
+        name: 'Created By',
+        class: 'text-start',
+        event: this.idHeaderClick,
+      },
+    ]
     constructor(){}
     ngOnInit(){
-      let dataJSON = localStorage.getItem('HRMS_userDetails');
+      let dataJSON = localStorage.getItem('hrms_userInfo');
       this.userData = JSON.parse(dataJSON == null ? '' : dataJSON);
       console.log('data', this.userData);
+    }
+    
+    idHeaderClick(){
+      alert('hi')
     }
 }

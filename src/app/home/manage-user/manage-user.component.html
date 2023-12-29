@@ -12,33 +12,37 @@
             <div class="card">
                 <div class="card-header">User details</div>
                 <div class="card-body">
-                    <div class="table-responsive">
+                    <app-table [myHeader]="tableUserHeader" [data]="userData"></app-table>
+                    <!-- <div class="table-responsive">
                         <table class="table table-sm table-hover table-striped">
                             <thead>
                                 <tr class="table-primary">
                                     <th>S.no</th>
-                                    <th>User Name</th>
-                                    <th>Age</th>
+                                    <th>User Name</th>                                    
                                     <th>Role</th>
-                                    <th>Address</th>
                                     <th>Created Date</th>
+                                    <th>Created By</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr *ngFor="let item of userData; let i = index">
                                     <td>{{i + 1}}</td>
-                                    <td>{{item.name}}</td>
-                                    <td>{{item.age}}</td>
+                                    <td>{{item.userName}}</td>
                                     <td>{{item.role}}</td>
-                                    <td>{{item.address}}</td>
-                                    <td>{{item.YOJ}}</td>
+                                    <td>{{item.createdDate}}</td>
+                                    <td>{{item.createdBy}}</td>
+                                </tr>
+                                <tr *ngIf="userData.length == ''">
+                                    <td colspan="5" class="text-center">No Data Found</td>
                                 </tr>
                             </tbody>
                         </table>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
     </div>
     
+    
+     
 </div>

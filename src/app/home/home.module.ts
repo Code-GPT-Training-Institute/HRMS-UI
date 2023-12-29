@@ -14,6 +14,7 @@ import { FooterModule } from '../common/footer/footer.module';
 import { PersonalDetailsComponent } from './personal-details/personal-details.component';
 
 import { CreateUserComponent } from './manage-user/create-user/create-user.component';
+import { TableComponent } from '../common/table/table.component';
 
 
 
@@ -26,6 +27,7 @@ import { CreateUserComponent } from './manage-user/create-user/create-user.compo
     ManageUserComponent,
     PersonalDetailsComponent,
     CreateUserComponent,    
+    TableComponent
   ],
   imports: [
     CommonModule,
