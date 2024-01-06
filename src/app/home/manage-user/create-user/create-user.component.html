@@ -1,0 +1,42 @@
+
+<div class="py-4">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    Create / Edit User
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <form (submit)="userSubmit()">                                
+                                <div class="mb-3">
+                                    <label class="form-label" for="">User Name</label>
+                                    <input type="text" class="form-control" name="userName" [(ngModel)]="currentUser.userName" required/>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label" for="">Password</label>
+                                    <input type="password" class="form-control" name="password" [(ngModel)]="currentUser.password" required/>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label" for="">Role</label>
+                                    <input type="text" class="form-control" name="role" [(ngModel)]="currentUser.role" required/>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label" for="">Created Date</label>
+                                    <input type="date" class="form-control" name="createdDate" [(ngModel)]="currentUser.createdDate" required/>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label" for="">Created By</label>
+                                    <input type="text" class="form-control" name="createdBy" [(ngModel)]="currentUser.createdBy" required/>
+                                </div>
+        
+                                <button class="btn btn-primary">Submit</button>
+                            </form>
+                        </div>
+                    </div>                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

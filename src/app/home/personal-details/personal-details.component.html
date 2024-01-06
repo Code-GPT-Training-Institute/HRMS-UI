@@ -1,0 +1,131 @@
+<div class="card mb-4">
+    <div class="card-header">Personal Details</div>
+    <div class="card-body">
+        <form #profileDataForm="ngForm" (ngSubmit)="profileDataSubmit(profileDataForm)">
+            <div class="row mb-5">
+                <div class="col-lg-4">
+                    <div class="mb-3">
+                        <label class="form-label">First Name</label>
+                        <input type="text" class="form-control" name="firstName" [(ngModel)]="firstName" required/>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="mb-3">
+                        <label class="form-label">Middle Name</label>
+                        <input type="text" class="form-control" name="middleName" [(ngModel)]="middleName"/>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="mb-3">
+                        <label class="form-label">Last Name</label>
+                        <input type="text" class="form-control" name="lastName" [(ngModel)]="lastName"/>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="mb-3">
+                        <label class="form-label">Email Id</label>
+                        <input type="email" class="form-control" name="emailId" [(ngModel)]="emailId"/>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="mb-3">
+                        <label class="form-label">Mobile Number</label>
+                        <input type="tel" class="form-control" name="mobileNumber" [(ngModel)]="mobileNumber" />
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="mb-3">
+                        <label class="form-label">Date of Birth</label>
+                        <input type="text" class="form-control" name="dateOfBirth" [(ngModel)]="dateOfBirth" />
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="mb-3">
+                        <label class="form-label">Nationality</label>
+                        <input type="text" class="form-control" name="nationality" [(ngModel)]="nationality" />
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="mb-3">
+                        <label class="form-label">Gender</label>
+                        <select class="form-select" [(ngModel)]="gender" name="gender">
+                            <option value="null">Select Gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="mb-3">
+                        <label class="form-label">Marital Status</label>
+                        <div class="py-2">
+                            <div class="form-check form-check-inline">
+                                <input type="radio" class="form-check-input" id="radio1" name="maritalStatus" value="Married" checked [(ngModel)]="maritalStatus">                            
+                                <label class="form-check-label" for="radio1">Married</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input type="radio" class="form-check-input" id="radio2" name="maritalStatus" value="Single" [(ngModel)]="maritalStatus">
+                                <label class="form-check-label" for="radio2">Single</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h4 class="h4">Address Information</h4>
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="mb-3">
+                        <label class="form-label">Door No/ Flat No</label>
+                        <input type="text" class="form-control" name="doorNo" [(ngModel)]="doorNo"/>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="mb-3">
+                        <label class="form-label">Street Name</label>
+                        <input type="text" class="form-control" name="streetName" [(ngModel)]="streetName"/>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="mb-3">
+                        <label class="form-label">Area</label>
+                        <input type="text" class="form-control" name="area" [(ngModel)]="area" />
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="mb-3">
+                        <label class="form-label">City</label>
+                        <input type="text" class="form-control" name="city" [(ngModel)]="city"/>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="mb-3">
+                        <label class="form-label">District</label>
+                        <input type="text" class="form-control" name="district" [(ngModel)]="district" />
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="mb-3">
+                        <label class="form-label">Pin Code</label>
+                        <input type="text" class="form-control" name="pinCode" [(ngModel)]="pinCode" />
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="mb-3">
+                        <label class="form-label">Country</label>
+                        <input type="text" class="form-control" name="country" [(ngModel)]="country"/>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="mb-3">
+                        <label class="form-label">State</label>
+                        <input type="text" class="form-control" name="state" [(ngModel)]="state" />
+                    </div>
+                </div>
+            </div>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <button class="btn btn-primary px-4">Next</button>
+            </div>
+        </form>        
+    </div>
+</div>
