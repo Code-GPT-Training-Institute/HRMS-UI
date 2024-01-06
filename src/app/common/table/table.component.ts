@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { ManageUserTableHeader } from 'src/app/home/manage-user/manage-user.component';
 
 @Component({
   selector: 'app-table',
@@ -7,7 +8,15 @@ import { Component, Input } from '@angular/core';
 })
 export class TableComponent {
    @Input() 
-   myHeader: any[];
+   myHeader: ManageUserTableHeader[];
    @Input() 
-   data: any[];
+   data: any[];   
+   @Output() onRowClickEvent: EventEmitter<any> = new EventEmitter<any>();
+   @Output() onDeleteRowClickEvent: EventEmitter<any> = new EventEmitter<any>();
+   rowClick(event){
+    this.onRowClickEvent.emit(event);
+   }
+   rowDelete(event){
+    this.onDeleteRowClickEvent.emit(event);
+   }
 }

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-manage-user',
@@ -7,7 +8,7 @@ import { Component } from '@angular/core';
 })
 export class ManageUserComponent { 
     public userData: any;
-    tableUserHeader = [
+    tableUserHeader: ManageUserTableHeader[] = [
       {
         name: 'S.no',
         class: 'text-start',
@@ -34,7 +35,7 @@ export class ManageUserComponent {
         event: this.idHeaderClick,
       },
     ]
-    constructor(){}
+    constructor(private router: Router){}
     ngOnInit(){
       let dataJSON = localStorage.getItem('hrms_userInfo');
       this.userData = JSON.parse(dataJSON == null ? '' : dataJSON);
@@ -44,4 +45,26 @@ export class ManageUserComponent {
     idHeaderClick(){
       alert('hi')
     }
+
+    editUserData(event){
+      console.log('event', event.id);
+      this.router.navigate(['/home/create-user'], { queryParams: { id: event.id} })
+    }
+    deleteUserData(event){
+      for(let i in this.userData){
+        debugger;
+        if(event.id == this.userData[i].id){
+          this.userData.splice(i, 1);
+          localStorage.setItem('hrms_userInfo', JSON.stringify(this.userData));
+          return;
+        }
+      }
+    }
+
+}
+
+export interface ManageUserTableHeader{
+  name: string
+  class: string
+  event: Function
 }
