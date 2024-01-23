@@ -7,18 +7,19 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./create-user.component.scss']
 })
 export class CreateUserComponent {
-  public currentUser: User;
+  public currentUser: UserLS;
   existingUserStatus: any = localStorage.getItem('hrms_userInfo');
-  existingUser: User[] = this.existingUserStatus === null ? [] : JSON.parse(localStorage.getItem('hrms_userInfo'));
+  existingUser: UserLS[] = this.existingUserStatus === null ? [] : JSON.parse(localStorage.getItem('hrms_userInfo'));
 
   public currentUserId: number;
   public userData: any;
-  userQueryId: number = +this.route.snapshot.queryParamMap.get('id');
+  private userQueryId: number;
   constructor(private route: ActivatedRoute) {
   }
 
   ngOnInit() {    
-    this.currentUser = new User();
+    this.userQueryId = +this.route.snapshot.queryParamMap.get('id');
+    this.currentUser = new UserLS();
     debugger; 
     if (this.userQueryId == null || this.userQueryId == undefined || this.userQueryId == 0) {
       // this.currentUser = new User();
@@ -53,7 +54,7 @@ export class CreateUserComponent {
     
   }
 }
-export class User {
+export class UserLS {
   public id: number;
   public userName: string;
   public password: string;

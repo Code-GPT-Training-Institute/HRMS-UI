@@ -15,6 +15,7 @@ import { PersonalDetailsComponent } from './personal-details/personal-details.co
 
 import { CreateUserComponent } from './manage-user/create-user/create-user.component';
 import { TableComponent } from '../common/table/table.component';
+import { NewUserComponent } from './manage-user/new-user/new-user.component';
 
 
 
@@ -27,7 +28,8 @@ import { TableComponent } from '../common/table/table.component';
     ManageUserComponent,
     PersonalDetailsComponent,
     CreateUserComponent,    
-    TableComponent
+    TableComponent, 
+    NewUserComponent
   ],
   imports: [
     CommonModule,

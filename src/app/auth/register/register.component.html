@@ -1,1 +1,37 @@
-<p>register works!</p>
+<div class="loginPage">
+    <div class="container h-100">
+        <div class="row justify-content-center align-items-center h-100">
+            <div class="col-lg-5 col-md-6 col-sm-10">
+                <h3 class="text-center mb-3 text-primary">HRMS</h3>
+                <div class="card logincard">               
+                    <div class="card-body">
+                        <div class="mb-4 myformInputs">
+                            <label class="form-label">Select Country</label>
+                            <select class="form-select" [(ngModel)]="countrySelected" (change)="selectedCountry()">
+                                <option value="0">Select Country</option>
+                                <option [id]="getCountry.sortName" [value]="getCountry.id" *ngFor="let getCountry of getCountryList">{{getCountry.name}}</option>
+                                <!-- <ng-container  *ngFor="let getCountry of getCountryList">
+                                    <option [id]="getCountry.id" [value]="getCountry.sortName">{{getCountry.name}}</option>
+                                </ng-container>  -->
+                            </select>
+                        </div>
+                        <div class="mb-4 myformInputs" *ngIf="countrySelected != null">
+                            <label class="form-label">Select State</label>
+                            <select class="form-select" [(ngModel)]="stateSelected" (change)="selectedState()">
+                                <option value="0">Select State</option>
+                                <option *ngFor="let getState of getStateList" [value]="getState.id">{{getState.name}}</option>
+                            </select>
+                        </div>
+                        <div class="mb-4 myformInputs" *ngIf="stateSelected != null">
+                            <label class="form-label">Select City</label>
+                            <select class="form-select">
+                                <option>Select City</option>
+                                <option *ngFor="let getCity of getCityList" [value]="getCity.id">{{getCity.name}}</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

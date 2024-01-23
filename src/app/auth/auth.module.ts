@@ -8,6 +8,7 @@ import { AuthComponent } from './auth.component';
 import { AuthNavBarComponent } from '../common/auth-nav-bar/auth-nav-bar.component';
 import { LoginService } from '../services/login.service';
 import { FooterModule } from '../common/footer/footer.module';
+import { CreateUserComponent } from './create-user/create-user.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { FooterModule } from '../common/footer/footer.module';
     RegisterComponent, 
     AuthComponent,
     AuthNavBarComponent,
+    CreateUserComponent,
     
   ],
   imports: [
