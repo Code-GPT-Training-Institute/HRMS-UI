@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./manage-user.component.scss']
 })
 export class ManageUserComponent { 
+    // local storage start
     public userData: any;
     tableUserHeader: ManageUserTableHeader[] = [
       {
@@ -35,6 +36,34 @@ export class ManageUserComponent {
         event: this.idHeaderClick,
       },
     ]
+    // local storage start
+    // tableUserHeader1: ManageUserTableHead[] = [
+    //   {name: 'ID',
+    //   class: 'text-center',
+    //   event: this.idHeaderClick
+    //   },
+    //   {name: 'Name',
+    //   class: 'text-left',
+    //   event: this.idHeaderClick
+    //   },
+    //   {name: 'password',
+    //   class: 'text-left',
+    //   event: this.idHeaderClick
+    //   },
+    //   {name: 'Role',
+    //   class: 'text-left',
+    //   event: this.idHeaderClick
+    //   },
+    //   {name: 'Created By',
+    //   class: 'text-left',
+    //   event: this.idHeaderClick
+    //   },
+    //   {name: 'Created Date',
+    //   class: 'text-left',
+    //   event: this.idHeaderClick
+    //   }    
+
+    // ]
     constructor(private router: Router){}
     ngOnInit(){
       let dataJSON = localStorage.getItem('hrms_userInfo');
@@ -68,3 +97,9 @@ export interface ManageUserTableHeader{
   class: string
   event: Function
 }
+
+// export interface ManageUserTableHead{
+//   name: string,
+//   class: string,
+//   event: Function,
+// }

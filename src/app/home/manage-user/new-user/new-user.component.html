@@ -23,6 +23,8 @@
                             </div>
                             <div class="text-center">
                                 <button class="btn btn-primary" (click)="createUser()">Submit</button>
+                                <button class="btn btn-secondary" (click)="userEdit()">Edit</button>
+                                <button class="btn btn-danger" (click)="userDelete()" [disabled]="!uservalidate">Delete</button>
                             </div>
                         </div>
                     </div>

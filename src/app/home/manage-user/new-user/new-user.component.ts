@@ -11,7 +11,7 @@ import { of } from 'rxjs';
 })
 export class NewUserComponent {
   public user: User;
-
+  uservalidate: boolean = false;
   constructor(public userService: UserserviceService){}
   ngOnInit(){
     this.user = new User();
@@ -46,4 +46,17 @@ export class NewUserComponent {
     // this.user.createdDt = new Date();
     return true;
   }
+  userEdit(){
+    this.userService.validateUserName(this.user.userName).subscribe(isValidateUser => {
+      this.uservalidate = isValidateUser;
+    })
+  }
+  userDelete(){
+    this.userService.deleteUser(this.user.userName).subscribe((success) => {
+      alert("Deleted Successfully");
+    },(error) => {
+      alert("user name not matched please check")
+    })
+  }
+
 }
